@@ -50,5 +50,5 @@ debug port f =
         runSettings (setPort port (setTimeout 3600 defaultSettings)) =<<
             jsaddleOr defaultConnectionOptions
                 (registerContext >> f >> syncPoint)
-                (staticPolicy (addBase "./static/") $ simpleCors $ withRefresh spaDebug)
+                (simpleCors $ staticPolicy (addBase "./static/") $ withRefresh spaDebug)
 #endif
