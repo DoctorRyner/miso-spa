@@ -13,6 +13,7 @@ dependencies:
 - jsaddle-warp
 - http-types
 - wai
+- wai-cors
 - warp
 - wai-middleware-static
 - websockets
@@ -22,6 +23,7 @@ dependencies:
 - aeson
 - network-uri
 - exceptions
+- swagger2
 
 default-extensions:
 - OverloadedStrings
