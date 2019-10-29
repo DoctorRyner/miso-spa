@@ -11,7 +11,6 @@ import           Language.Javascript.JSaddle.WebSockets
 import           Network.HTTP.Types
 import           Network.Wai
 import           Network.Wai.Handler.Warp
-import           Network.Wai.Middleware.Cors
 import           Network.Wai.Middleware.Static
 import           Network.WebSockets                     hiding (Response)
 
@@ -37,7 +36,7 @@ run _ = id
 #else
 run :: Int -> JSM () -> IO ()
 run port f = runSettings (setPort port (setTimeout 3600 defaultSettings)) =<<
-    jsaddleOr defaultConnectionOptions (f >> syncPoint) (staticPolicy (addBase "./static/") $ simpleCors spa)
+    jsaddleOr defaultConnectionOptions (f >> syncPoint) (staticPolicy (addBase "./static/") spa)
 #endif
 
 #ifdef ghcjs_HOST_OS
@@ -50,5 +49,5 @@ debug port f =
         runSettings (setPort port (setTimeout 3600 defaultSettings)) =<<
             jsaddleOr defaultConnectionOptions
                 (registerContext >> f >> syncPoint)
-                (simpleCors $ staticPolicy (addBase "./static/") $ withRefresh spaDebug)
+                (staticPolicy (addBase "./static/") $ withRefresh spaDebug)
 #endif

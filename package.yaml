@@ -13,7 +13,6 @@ dependencies:
 - jsaddle-warp
 - http-types
 - wai
-- wai-cors
 - warp
 - wai-middleware-static
 - websockets
