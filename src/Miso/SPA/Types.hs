@@ -31,9 +31,3 @@ instance ToParamSchema MisoString where
     toParamSchema _ = toParamSchema (Proxy :: Proxy String)
 
 instance ToSchema MisoString where declareNamedSchema = plain . paramSchemaToSchema
-
-data User = User
-    { uid  :: Int
-    , name :: MisoString
-    } deriving (Generic, Show)
-
