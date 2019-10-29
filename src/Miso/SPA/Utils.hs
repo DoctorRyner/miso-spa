@@ -59,8 +59,8 @@ deleteFirst _ [] = []
 deleteFirst a (b:bc) | a == b    = bc
                      | otherwise = b : deleteFirst a bc
 
-go :: (URI -> action) -> MisoString -> URI -> action
-go action routeStr uri = action $ uri { URI.uriPath = unpack routeStr }
+route :: (URI -> action) -> MisoString -> URI -> action
+route action routeStr uri = action $ uri { URI.uriPath = unpack routeStr }
 
 fromResp :: Response response -> model -> (response -> model) -> Effect action model
 fromResp response model updator = case response of
