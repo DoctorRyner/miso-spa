@@ -1,0 +1,31 @@
+name:                miso-spa
+version:             0.1
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on GitHub at <https://github.com/githubuser/miso-spa#readme>
+
+dependencies:
+- base
+- bytestring
+- jsaddle
+- jsaddle-warp
+- http-types
+- wai
+- warp
+- wai-middleware-static
+- websockets
+- miso
+- text
+- unordered-containers
+- aeson
+- network-uri
+- exceptions
+
+default-extensions:
+- OverloadedStrings
+- LambdaCase
+
+library:
+  source-dirs: src
