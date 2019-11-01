@@ -22,7 +22,14 @@ dependencies:
 - aeson
 - network-uri
 - exceptions
-- swagger2
+
+when:
+- condition: impl(ghcjs)
+  then:
+    dependencies: []
+  else:
+    dependencies:
+    - swagger2
 
 default-extensions:
 - OverloadedStrings

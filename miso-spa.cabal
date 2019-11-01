@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1e40ece41cbbf7b62800d99e1b3f539ed8d543fe462bfdc1de2931f1f6fd68d5
+-- hash: d66939af0935ed7ecca2ad3eb1034a312f53bf655a3ca523c52dcbfa90c3247d
 
 name:           miso-spa
 version:        0.1
@@ -34,11 +34,14 @@ library
     , jsaddle-warp
     , miso
     , network-uri
-    , swagger2
     , text
     , unordered-containers
     , wai
     , wai-middleware-static
     , warp
     , websockets
+  if impl(ghcjs)
+  else
+    build-depends:
+        swagger2
   default-language: Haskell2010
