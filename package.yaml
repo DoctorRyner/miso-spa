@@ -12,10 +12,6 @@ dependencies:
 - jsaddle
 - jsaddle-warp
 - http-types
-- wai
-- warp
-- wai-middleware-static
-- websockets
 - miso
 - text
 - unordered-containers
@@ -30,6 +26,11 @@ when:
   else:
     dependencies:
     - swagger2
+    - wai
+    - warp
+    - wai-middleware-static
+    - websockets
+  
 
 default-extensions:
 - OverloadedStrings
