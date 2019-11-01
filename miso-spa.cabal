@@ -1,0 +1,44 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 1e40ece41cbbf7b62800d99e1b3f539ed8d543fe462bfdc1de2931f1f6fd68d5
+
+name:           miso-spa
+version:        0.1
+description:    Please see the README on GitHub at <https://github.com/githubuser/miso-spa#readme>
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      Miso.SPA
+      Miso.SPA.Server
+      Miso.SPA.Types
+      Miso.SPA.Utils
+  other-modules:
+      Paths_miso_spa
+  hs-source-dirs:
+      src
+  default-extensions: OverloadedStrings LambdaCase
+  build-depends:
+      aeson
+    , base
+    , bytestring
+    , exceptions
+    , http-types
+    , jsaddle
+    , jsaddle-warp
+    , miso
+    , network-uri
+    , swagger2
+    , text
+    , unordered-containers
+    , wai
+    , wai-middleware-static
+    , warp
+    , websockets
+  default-language: Haskell2010
