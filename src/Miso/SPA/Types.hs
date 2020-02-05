@@ -1,6 +1,7 @@
-{-# LANGUAGE CPP               #-}
-{-# LANGUAGE DeriveGeneric     #-}
-{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE CPP                   #-}
+{-# LANGUAGE DeriveGeneric         #-}
+{-# LANGUAGE FlexibleInstances     #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
 
 module Miso.SPA.Types where
 
@@ -37,3 +38,9 @@ data Route
     = Root
     | Route String
     deriving (Show, Eq)
+
+class MisoModel model event where
+    goTo :: String -> model -> event
+
+class MisoModelWithLocale model where
+    (<--) :: MisoString -> model -> MisoString
