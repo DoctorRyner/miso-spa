@@ -15,12 +15,14 @@ module Miso.SPA
     , module Miso.Types
     , module Miso.Util
     , module Miso.WebSocket
+    , JSM
     ) where
 
 import           Miso.SPA.Server
 import           Miso.SPA.Types
 import           Miso.SPA.Utils
 
+import           Language.Javascript.JSaddle.Types (JSM)
 import           Miso.Dev
 import           Miso.Effect
 import           Miso.Event
@@ -34,3 +36,5 @@ import           Miso.Subscription
 import           Miso.Types
 import           Miso.Util
 import           Miso.WebSocket
+
+import           Miso
