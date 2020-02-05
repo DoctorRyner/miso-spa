@@ -10,6 +10,8 @@ module Miso.SPA
 
     , module Miso.Html.Event
     , module Miso.Html.Property
+
+    , module Network.URI
     ) where
 
 import           Miso.SPA.Server
@@ -23,3 +25,5 @@ import           Miso.WebSocket
 
 import           Miso.Html.Event
 import           Miso.Html.Property hiding (form_)
+
+import           Network.URI
