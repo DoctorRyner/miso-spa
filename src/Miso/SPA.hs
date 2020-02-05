@@ -10,7 +10,6 @@ module Miso.SPA
     , module Miso.Html.Property
     , module Miso.Mathml
     , module Miso.Router
-    , module Miso.String
     , module Miso.Subscription
     , module Miso.Types
     , module Miso.Util
@@ -22,7 +21,6 @@ import           Miso.SPA.Server
 import           Miso.SPA.Types
 import           Miso.SPA.Utils
 
-import           Language.Javascript.JSaddle.Types (JSM)
 import           Miso.Dev
 import           Miso.Effect
 import           Miso.Event
@@ -31,7 +29,6 @@ import           Miso.Html.Event
 import           Miso.Html.Property
 import           Miso.Mathml
 import           Miso.Router
-import           Miso.String
 import           Miso.Subscription
 import           Miso.Types
 import           Miso.Util
