@@ -24,19 +24,11 @@ mshow = ms . show
 (<>~) :: Show a => MisoString -> a -> MisoString
 (<>~) str = (str <>) . mshow
 
-consoleLogFixed :: JSVal -> JSM ()
-consoleLogFixed =
-#ifdef ghcjs_HOST_OS
-    consoleLogJSVal
-#else
-    consoleLog
-#endif
-
 logJS :: MisoString -> JSM ()
-logJS str = consoleLogFixed =<< val (unpack str)
+logJS str = consoleLog =<< val (unpack str)
 
 logJS' :: Show a => a -> JSM ()
-logJS' str = consoleLogFixed =<< val (show str)
+logJS' str = consoleLog =<< val (show str)
 
 withJS :: model -> JSM action -> Effect action model
 withJS = (<#)
